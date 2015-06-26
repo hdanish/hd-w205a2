@@ -14,16 +14,22 @@ The authentication protocol makes use of AppAuthHandler and the keys have been r
 I used a count parameter of 100 (max) and chunked for every 2000 tweets. The resiliency is built using a while loop that will catch and pass for tweepy errors. I used the week period from 6/09 to 6/16 purposely in order to avoid the day of the last game, which was on 6/17.
 
 Running the code requires a simple python call of: 
+
 python a2-acquire.py
 
 ## Histogram
 Three different histograms are provided:
+
 1. fdist1full.csv represents the histogram for #NBAFinals2015 tag without #Warriors
+
 2. fdist2full.csv represents the histogram for #Warriors tag without #NBAFinals2015
+
 3. fdist3full.csv represents the histogram for both #NBAFinals2015 and #Warriors
 
 The histograms were produced using the NLTK library by tokenizing the text of the tweets and removing stopwords in the English corpus for NLTK. There is further filtering by alphanumeric characters in order to remove characters such as hashtags are colons. The FreqDist function is subsequently used on the final text.
 
 Running the code requires running a simple python call where all the json tweet data (and nothing else) is stored:
+
 cd tweets
+
 python a2-hist.py
